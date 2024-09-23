@@ -1,1 +1,121 @@
-Hello World
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Mascotas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Tienda de Mascotas - Navidad</h1>
+    <div class="cart">
+      <button id="cart-button">Carrito (<span id="cart-count">0</span>)</button>
+    </div>
+  </header>
+
+  <section class="product-list">
+    <div class="product" data-stock="10">
+      <img src="perro1.jpg" alt="Suéter Navideño para Perros">
+      <h2>Suéter Navideño para Perros</h2>
+      <p>$25.00</p>
+      <label for="size">Talla:</label>
+      <select class="size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+      </select>
+      <label for="color">Color:</label>
+      <select class="color">
+        <option value="Rojo">Rojo</option>
+        <option value="Verde">Verde</option>
+      </select>
+      <div class="quantity-control">
+        <button class="minus">-</button>
+        <span class="quantity">1</span>
+        <button class="plus">+</button>
+      </div>
+      <button class="add-to-cart" data-product="Suéter Navideño" data-price="25">Agregar al carrito</button>
+      <p class="stock-status"></p>
+    </div>
+
+    <div class="product" data-stock="5">
+      <img src="perro2.jpg" alt="Gorro Navideño para Perros">
+      <h2>Gorro Navideño para Perros</h2>
+      <p>$15.00</p>
+      <label for="size">Talla:</label>
+      <select class="size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+      </select>
+      <label for="color">Color:</label>
+      <select class="color">
+        <option value="Rojo">Rojo</option>
+        <option value="Verde">Verde</option>
+      </select>
+      <div class="quantity-control">
+        <button class="minus">-</button>
+        <span class="quantity">1</span>
+        <button class="plus">+</button>
+      </div>
+      <button class="add-to-cart" data-product="Gorro Navideño" data-price="15">Agregar al carrito</button>
+      <p class="stock-status"></p>
+    </div>
+
+    <div class="product" data-stock="2">
+      <img src="perro3.jpg" alt="Bufanda Navideña para Perros">
+      <h2>Bufanda Navideña para Perros</h2>
+      <p>$10.00</p>
+      <label for="size">Talla:</label>
+      <select class="size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+      </select>
+      <label for="color">Color:</label>
+      <select class="color">
+        <option value="Rojo">Rojo</option>
+        <option value="Verde">Verde</option>
+      </select>
+      <div class="quantity-control">
+        <button class="minus">-</button>
+        <span class="quantity">1</span>
+        <button class="plus">+</button>
+      </div>
+      <button class="add-to-cart" data-product="Bufanda Navideña" data-price="10">Agregar al carrito</button>
+      <p class="stock-status"></p>
+    </div>
+  </section>
+
+  <div id="cart-modal" class="cart-modal">
+    <h2>Carrito de Compras</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="cart-total">0</span></p>
+    <button id="checkout">Pagar</button>
+    <button id="close-cart">Cerrar</button>
+  </div>
+
+  <div id="payment-modal" class="payment-modal">
+    <h2>Pago</h2>
+    <form id="payment-form">
+      <label for="name">Nombre en la tarjeta</label>
+      <input type="text" id="name" required>
+
+      <label for="card-number">Número de tarjeta</label>
+      <input type="text" id="card-number" maxlength="16" required>
+
+      <label for="expiry">Fecha de vencimiento (MM/YY)</label>
+      <input type="text" id="expiry" maxlength="5" required>
+
+      <label for="cvv">CVV</label>
+      <input type="text" id="cvv" maxlength="3" required>
+
+      <button type="submit">Confirmar pago</button>
+    </form>
+    <button id="cancel-payment">Cancelar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
